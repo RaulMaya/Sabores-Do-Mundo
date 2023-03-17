@@ -1,0 +1,13 @@
+#signUp .modal-header {
+    background-image: url(../images/signUp.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+}
+
+#logIn .modal-header {
+    background-image: url(../images/logIn.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 70px;
+}
