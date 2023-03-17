@@ -29,4 +29,4 @@ Country.init(
     }
 )
 
-module.exports = {Country};
+module.exports = Country;
