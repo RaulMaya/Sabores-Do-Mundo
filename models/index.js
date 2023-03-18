@@ -8,7 +8,7 @@ User.hasMany(Food, {
     onDelete: 'CASCADE'
 });
 
-Food.belongto(User, {
+Food.belongsTo(User, {
     foreignKey: "user_id",
 });
 
@@ -17,7 +17,7 @@ Country.hasMany(Food, {
     onDelete: 'CASCADE'
 });
 
-Food.belongto(Country, {
+Food.belongsTo(Country, {
     foreignKey: "country_id",
     onDelete: 'CASCADE'
 });
@@ -27,7 +27,7 @@ Food.hasOne(Receipe, {
     onDelete: 'CASCADE'
 });
 
-Receipe.belongsto(Food, {
+Receipe.belongsTo(Food, {
     foreignKey: "food_id",
     onDelete: 'CASCADE'
 });
