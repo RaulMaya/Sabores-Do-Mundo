@@ -1,25 +1,25 @@
 const Country = require ('./Country');
 const Food = require ('./Food');
-const Receipe = require ('./Receipe');
+const Recipe = require ('./Receipe');
 
 Country.hasMany(Food,{
     foreignKey: "country_id",
     onDelete: 'CASCADE'
 });
 
-Food.belongto(Country,{
+Food.belongsTo(Country,{
     foreignKey: "country_id",
     onDelete: 'CASCADE'
 });
 
-Food.hasOne(Receipe,{
+Food.hasOne(Recipe,{
     foreignKey: "food_id",
     onDelete: 'CASCADE'
 });
 
-Receipe.belongsto(Food,{
+Recipe.belongsTo(Food,{
     foreignKey: "food_id",
     onDelete: 'CASCADE'
 });
 
-module.exports = {Country, Food, Receipe}
+module.exports = {Country, Food, Recipe}

@@ -25,8 +25,9 @@ Country.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName : "country",
+        timestamps : false,
+        modelName : "country"
     }
 )
 
-module.exports = {Country};
+module.exports = Country;
