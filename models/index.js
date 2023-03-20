@@ -3,6 +3,7 @@ const Food = require ('./Food');
 const Receipe = require ('./Receipe');
 const User = require('./User')
 
+
 User.hasMany(Food, {
     foreignKey: "user_id",
     onDelete: 'CASCADE'
@@ -32,4 +33,6 @@ Receipe.belongsTo(Food, {
     onDelete: 'CASCADE'
 });
 
+
 module.exports = { Country, Food, Receipe, User }
+

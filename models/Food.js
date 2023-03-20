@@ -23,13 +23,13 @@ Food.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // country_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "country",
-    //     key: "id",
-    //   },
-    // },
+    country_id: {
+       type: DataTypes.INTEGER,
+       references: {
+         model: "country",
+         key: "id",
+       },
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {

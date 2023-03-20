@@ -1,3 +1,4 @@
-DROP DATABASE IF EXISTS sabores_do_mundo_db;
+DROP DATABASE IF EXISTS food_guide_db;
 
-CREATE DATABASE sabores_do_mundo_db;
+CREATE DATABASE food_guide_db;
+
