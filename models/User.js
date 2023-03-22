@@ -16,6 +16,10 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    is_superUser: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     firstname: {
       type: DataTypes.STRING,
       allowNull: false,
