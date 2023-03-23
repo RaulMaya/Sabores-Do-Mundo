@@ -53,7 +53,7 @@ const recipeData = [
   },
   {
     ingredients:
-      "2 Guajillo chile​​​​​​​​​​​​​​ / 1 Red hot chili (chile de arbol) / ½ Teaspoon of Cumin / 1 Spoon of Oregano / ½ Onion / 5 Garlic cloves / 1 spoon Salt / 6 whole black pepper / 3 Bay leaves",
+      "2 Guajillo chile/ 1 Red hot chili (chile de arbol) / ½ Teaspoon of Cumin / 1 Spoon of Oregano / ½ Onion / 5 Garlic cloves / 1 spoon Salt / 6 whole black pepper / 3 Bay leaves",
     steps: `1. Toast these ingredients well, taking care that the chilies do not burn. They toast fast so remove them before the onion and garlic.
         2. Put all the toasted ingredients in the blender together with 1 tsp of oregano ½ tsp of cumin, 1 tbsp of salt, and 3 bay leaves. Add 1 cup of water and blend everything very well.
         3. With the sauce, you created marinate the meat for one night in the refrigerator. If you don’t have time, don’t worry, I prepared it without marinating and it is delicious, so if you marinate it, it will be gourmet. 
@@ -295,7 +295,7 @@ const recipeData = [
     2. Add the whole chicken breast and cook for 30 minutes or until the chicken is cooked through. 
     3. Remove the chicken from the broth and shred with your hands. Reserve separately the chicken and the broth in which it was cooked. 
     4. Heat the oil in a large pot and cook the onion together with the chili pepper, season with Gourmet Sea Salt and Gourmet Pepper Mix. Cook until the onion is transparent and soft. 
-    5. Soak the sliced ​​bread in a cup of the chicken broth that was left over from cooking. 
+    5. Soak the sliced bread in a cup of the chicken broth that was left over from cooking. 
     6. Drain the bread and then blend together with the evaporated milk, onion and chili peppers. Return everything to the pot and cook for 8 minutes. 
     7. Add Gourmet Ground Turmeric, shredded chicken, Parmesan cheese and walnuts. If it is too thick, gradually add the reserved chicken broth. 
     8. Serve accompanied by white rice, a hard-boiled egg cut into quarters and olives.`,
@@ -331,20 +331,6 @@ const recipeData = [
     12. Give thanks to Pachamama before opening the pot and serving the Pachamanca`,
     video_link: "How to make Pachamanca",
     food_id: "30",
-  },
-  {
-    ingredients:
-      "1 lb. dried elbow pasta/ 1/2 cup unsalted butter/ 1/2 cup all purpose flour/ 1 1/2 cups whole milk/ 2 1/2 cups half and half/ 4 cups shredded medium sharp cheddar cheese divided (measured after shredding)/ 2 cups shredded Gruyere cheese divided (measured after shredding)/ 1/2 Tbsp. salt/ 1/2 tsp. black pepper/ 1/4 tsp. paprika",
-    steps: `Preheat oven to 325 degrees F and grease a 3 qt baking dish (9x13"). Set aside. 2. Bring a large pot of salted water to a boil. When boiling, add dried pasta and cook 1 minute less than the package directs for al dente. Drain and drizzle with a little bit of olive oil to keep from sticking. 3 While water is coming up to a boil, shred cheeses and toss together to mix, then divide into three piles. Approximately 3 cups for the sauce, 1 1/2 cups for the inner layer, and 1 1/2 cups for the topping. 4 Melt butter in a large saucepan over medium heat. Sprinkle in flour and whisk to combine. Mixture will look like very wet sand. Cook for approximately 1 minute, whisking often. Slowly pour in about 2 cups or so of the half and half, while whisking constantly, until smooth. Slowly pour in the remaining half and half and the whole milk, while whisking constantly, until combined and smooth. 5 Continue to heat over medium heat, whisking very often, until thickened to a very thick consistency. It should almost be the consistency of a semi thinned out condensed soup. 6 Remove from the heat and stir in spices and 1 1/2 cups of the cheeses, stirring to melt and combine. Stir in another 1 1/2 cups of cheese, and stir until completely melted and smooth.7 In a large mixing bowl, combine drained pasta with cheese sauce, stirring to combine fully. Pour half of the pasta mixture into the prepared baking dish. 8 Top with 1 1/2 cups of shredded cheeses, then top that with the remaining pasta mixture. 9 Sprinkle the top with the last 1 1/2 cups of cheese and bake for 15 minutes, until cheesy is bubbly and lightly golden brown.`,
-    video_link: "How to make mac n cheese",
-    food_id: "31",
-  },
-  {
-    ingredients:
-      "Wings:  4 lb / 2kg chicken wings, wingettes & drumettes (Note 1)/ 5 teaspoons baking powder (NOT baking soda / bi-carb soda) (Note 2)/ 3/4 teaspoons kosher salt / cooking salt (not table salt, too fine)/ SAUCE:  4 tbsp (60g) unsalted butter, melted/ 1/2 cup Frank’s Original Red Hot Sauce (Note 3)/ 1 tbsp brown sugar/ 1/4 tsp kosher salt / cooking salt. BLUE CHEESE DIP:  1/2 cup crumbled blue cheese, softened (I use gorgonzola)/ 1/2 cup sour cream/ 1/4 cup mayonnaise , preferably whole-egg/ 1 clove small garlic , minced/ 1 – 3 tbsp milk/ 2 tbsp lemon juice/ 1/2 tsp kosher salt / cooking salt/ Black pepper. TO SERVE: Celery sticks/ Lots of beer!",
-    steps: `WINGS: Dry overnight (optional) – If you plan ahead, lay the wings on a rack on a rimmed baking tray and let them dry uncovered in the fridge overnight. Alternatively, pat them dry with paper towels./ Preheat the oven to 250°F/120°C (all oven types). Put one oven shelf in the lower quarter of the oven and one in the top quarter./ Line the tray with foil. Put a rack on the tray then spray the rack with oil./ Toss wings – Place the wings in a large bowl. Sprinkle over baking powder and salt. Use hands to toss well (or shake in ziplock bag) to coat wings evenly./ Bake 30 minutes on low temp – Place the wings skin side up on the rack (ok if snug, they shrink). Bake on the lower shelf in the oven for 30 minutes./ Bake 40 minutes on high – Move the tray up to the higher shelf and turn the oven up to 425°F / 220°C (all oven types). Bake for a further 40 to 50 minutes, rotating the tray halfway through. The wings do not need to be turned over. They are ready when dark golden brown and the skin is very crispy./ Toss in sauce – Transfer the wings into a large bowl. Pour over sauce and toss to coat. (Alternatively, serve wings plain with Buffalo Sauce for dipping)./ Serve immediately with Blue Cheese Dip (for both wings and celery sticks dunking)!/ BUFFALO SAUCE:  Whisk together the Sauce ingredients until the sugar is melted. Keep warm or reheat just prior to using./ BLUE CHEESE DIP:  Mash the blue cheese with sour cream until smooth (or to your taste)./ Add remaining ingredients and mix well until combined, using milk to get it to the consistency you want. Store in the fridge until required. Remove from the fridge 15 minutes before serving.`,
-    video_link: "How to make buffalo wings",
-    food_id: "32",
   },
 ];
 
