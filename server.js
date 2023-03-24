@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(require('./controllers/indexRoute'));
+app.use(require('./controllers'));
 
 // turn on connection to db and server
 // app.sync({ force: false }).then(() => {
