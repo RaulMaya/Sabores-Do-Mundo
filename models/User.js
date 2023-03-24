@@ -16,7 +16,7 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    is_superUser: {
+    is_superuser: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
