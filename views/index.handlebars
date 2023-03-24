@@ -1,290 +1,230 @@
-    <header>
-      <nav
-        class="navbar navbar-expand-lg bg-body-tertiary border border-warning-subtle"
+<header>
+  <nav
+    class="navbar navbar-expand-lg bg-body-tertiary border border-warning-subtle"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img
+          src="/images/website_images/SaboresDoMondo.png"
+          alt="Logo"
+          width="25"
+          height="25"
+          class="d-inline-block align-text-top"
+        />
+        Sabores Do Mundo
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img
-              src="../public/images/website_images/SaboresDoMondo.png"
-              alt="Logo"
-              width="25"
-              height="25"
-              class="d-inline-block align-text-top"
-            />
-            Sabores Do Mundo
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link active"
-                  aria-current="page"
-                  href="#"
-                >Countries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Top 10</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Dashboard</a>
-              </li>
-              <li class="nav-item ps-2">
-                <button
-                  class="btn btn-outline-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signUp"
-                  type="button"
-                >
-                  Sign Up
-                </button>
-                <div
-                  class="modal fade"
-                  id="signUp"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1
-                          class="modal-title fs-3 text-white font-weight-bold"
-                          id="exampleModalLabel"
-                        >
-                          Sign Up
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link active"
+              aria-current="page"
+              href="#"
+            >Countries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top 10</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Dashboard</a>
+          </li>
+          <li class="nav-item ps-2">
+            <button
+              class="btn btn-outline-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#signUp"
+              type="button"
+            >
+              Sign Up
+            </button>
+            <div
+              class="modal fade"
+              id="signUp"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-3 text-white font-weight-bold"
+                      id="exampleModalLabel"
+                    >
+                      Sign Up
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label
+                          for="username"
+                          class="form-label"
+                        >Username</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="username"
+                          aria-describedby="usernameHelp"
+                          required
+                        />
+                        <div id="usernameHelp" class="form-text">
+                          Your username must only use aplhanumeric values.
+                        </div>
                       </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="username"
-                              class="form-label"
-                            >Username</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="username"
-                              aria-describedby="usernameHelp"
-                              required
-                            />
-                            <div id="usernameHelp" class="form-text">
-                              Your username must only use aplhanumeric values.
-                            </div>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="exampleInputEmail1"
-                              class="form-label"
-                            >Email address</label>
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="exampleInputEmail1"
-                              aria-describedby="emailHelp"
-                              required
-                            />
-                            <div id="emailHelp" class="form-text">
-                              We'll never share your email with anyone else.
-                            </div>
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="exampleInputPassword1"
-                              class="form-label"
-                            >Password</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="exampleInputPassword1"
-                              required
-                            />
-
-                            <div id="passwordHelpInline" class="form-text">
-                              Must be 8-20 characters long.
-                            </div>
-                          </div>
-
-                          <button type="submit" class="btn btn-warning">
-                            Submit
-                          </button>
-                        </form>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Email
+                          address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleInputEmail1"
+                          aria-describedby="emailHelp"
+                          required
+                        />
+                        <div id="emailHelp" class="form-text">
+                          We'll never share your email with anyone else.
+                        </div>
                       </div>
-                    </div>
+                      <div class="mb-3">
+                        <label
+                          for="exampleInputPassword1"
+                          class="form-label"
+                        >Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="exampleInputPassword1"
+                          required
+                        />
+
+                        <div id="passwordHelpInline" class="form-text">
+                          Must be 8-20 characters long.
+                        </div>
+                      </div>
+
+                      <button type="submit" class="btn btn-warning">
+                        Submit
+                      </button>
+                    </form>
                   </div>
                 </div>
-              </li>
-              <li class="nav-item ps-2">
-                <button
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#logIn"
-                  type="button"
-                >
-                  Log In
-                </button>
-                <div
-                  class="modal fade"
-                  id="logIn"
-                  tabindex="-1"
-                  aria-labelledby="logInModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1
-                          class="modal-title fs-3 text-white font-weight-bold"
-                          id="logInModalLabel"
-                        >
-                          Log In
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item ps-2">
+            <button
+              class="btn btn-warning"
+              data-bs-toggle="modal"
+              data-bs-target="#logIn"
+              type="button"
+            >
+              Log In
+            </button>
+            <div
+              class="modal fade"
+              id="logIn"
+              tabindex="-1"
+              aria-labelledby="logInModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1
+                      class="modal-title fs-3 text-white font-weight-bold"
+                      id="logInModalLabel"
+                    >
+                      Log In
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+                        <label for="logInInputEmail1" class="form-label">Email
+                          address</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="logInInputEmail1"
+                          aria-describedby="logInemailHelp"
+                          required
+                        />
                       </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="logInInputEmail1"
-                              class="form-label"
-                            >Email address</label>
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="logInInputEmail1"
-                              aria-describedby="logInemailHelp"
-                              required
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="logInexampleInputPassword1"
-                              class="form-label"
-                              required
-                            >Password</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="logInexampleInputPassword1"
-                            />
-                          </div>
+                      <div class="mb-3">
+                        <label
+                          for="logInexampleInputPassword1"
+                          class="form-label"
+                          required
+                        >Password</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="logInexampleInputPassword1"
+                        />
+                      </div>
 
-                          <button type="submit" class="btn btn-warning">
-                            Submit
-                          </button>
-                        </form>
-                      </div>
-                    </div>
+                      <button type="submit" class="btn btn-warning">
+                        Submit
+                      </button>
+                    </form>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <div class="container text-center mt-1">
-        <div class="row row align-items-center">
-          <div class="col m-2">
-            <p class="fs-1">
-              From Mexico to Denmark, take a look to the most delicious and
-              popular dishes across the world.
-            </p>
-            <button class="btn btn-outline-warning">Get Started</button>
-          </div>
-          <div class="col m-2">
-            <img
-              src="../public/images/website_images/Pizza.png"
-              class="img-fluid"
-              alt="Sabores Do Mundo index image"
-            />
-          </div>
-        </div>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-      <div class="container text-center bg-warning p-5 mt-3">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp"
-                class="card-img-top"
-                alt="Skyscrapers"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp"
-                class="card-img-top"
-                alt="Los Angeles Skyscrapers"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This card has supporting text below as a natural lead-in to
-                  additional content.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-100">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp"
-                class="card-img-top"
-                alt="Palm Springs Road"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This card has even longer
-                  content than the first to show that equal height action.
-                </p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </div>
-            </div>
-          </div>
-        </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="container text-center mt-1">
+    <div class="row row align-items-center">
+      <div class="col m-2">
+        <p class="fs-1">
+          From Mexico to Denmark, take a look to the most delicious and popular
+          dishes across the world.
+        </p>
+        <button class="btn btn-outline-warning">Get Started</button>
       </div>
-    </main>
+      <div class="col m-2">
+        <img
+          src="/images/website_images/Pizza.png"
+          class="img-fluid"
+          alt="Sabores Do Mundo index image"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="container text-center bg-warning p-5 mt-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {{#each foods as |food|}}
+        {{> index-cards}}
+      {{/each}}
+    </div>
+  </div>
+</main>
