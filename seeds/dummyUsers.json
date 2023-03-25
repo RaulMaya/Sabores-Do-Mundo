@@ -4,7 +4,49 @@
     "firstname": "Raul",
     "lastname": "Maya",
     "username": "RaulMaya20",
+    "linkedin": "https://www.linkedin.com/in/raul-maya/",
+    "github": "https://github.com/RaulMaya",
     "email": "raulmayas20@hotmail.com",
+    "password": "password1234"
+  },
+  {
+    "is_superuser": true,
+    "firstname": "Raul",
+    "lastname": "Olivo",
+    "username": "RaulOlivo60",
+    "linkedin": "https://www.linkedin.com/in/raul-maya/",
+    "github": "https://github.com/rulalolivo",
+    "email": "r.olivo606@gmail.com",
+    "password": "password1234"
+  },
+  {
+    "is_superuser": true,
+    "firstname": "Jacqueline",
+    "lastname": "Rios",
+    "username": "JacquelineRios",
+    "linkedin": "https://www.linkedin.com/in/raul-maya/",
+    "github": "https://github.com/Jeacqueline",
+    "email": "jeacqueline.rios@outlook.com",
+    "password": "password1234"
+  },
+  {
+    "is_superuser": true,
+    "firstname": "Moises",
+    "lastname": "Perez",
+    "username": "MoisesPerez",
+    "linkedin": "https://www.linkedin.com/in/raul-maya/",
+    "github": "https://github.com/MoisesPerez90",
+    "email": "moises.perezr@hotmail.com",
+    "password": "password1234"
+  },
+  {
+    "is_superuser": true,
+    "firstname": "Bryan",
+    "lastname": "Aguirre",
+    "username": "BryanAguirre",
+    "linkedin": "https://www.linkedin.com/in/raul-maya/",
+    "github": "https://github.com/Brayan-AS",
+    "email": "bryanaguirre@gmail.com",
     "password": "password1234"
   }
 ]

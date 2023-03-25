@@ -28,57 +28,9 @@
     </div>
     <div class="container">
       <div class="row d-flex justify-content-between mb-5">
-        <div
-          class="col-sm-6 col-xl-2"
-        >
-          <div
-          class="mt-5 bg-warning text-center shadow p-4 bg-body-tertiary rounded"
-          style="transition: all 0.3s ease-in-out;">
-            <div class="team-thumb">
-              <div class="thumb"><img
-                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                  class="rounded-circle"
-                  alt="..."
-                /></div>
-              <div class="team-social">
-                <ul class="styled-icons">
-                  <li class="d-inline-flex mb-5"><a class="text-decoration-none d-inline-flex w-36 rounded-circle text-center justify-content-center flex-column bg-light text-warning border border-1 border-warning"
-                  style="
-                  position: relative;  
-                  height: 40px;
-                  width: 40px;
-                  line-height: 40px;
-                  transition: all 0.3s ease-in-out;"
-                  href="#!"><i
-                        class="fab fa-github"
-                      ></i></a></li>
-                  <li class="d-inline-flex mb-5"><a class="text-decoration-none d-inline-flex w-36 rounded-circle text-center justify-content-center flex-column bg-light text-warning border border-1 border-warning" 
-                  style="
-                  position: relative;  
-                  height: 40px;
-                  width: 40px;
-                  line-height: 40px;
-                  transition: all 0.3s ease-in-out;"
-                  href="#!"><i
-                        class="fab fa-twitter"
-                      ></i></a></li>
-                  <li class="d-inline-flex mb-5"><a class="text-decoration-none d-inline-flex w-36 rounded-circle text-center justify-content-center flex-column bg-light text-warning border border-1 border-warning"
-                   style="
-                   position: relative;  
-                   height: 40px;
-                   width: 40px;
-                   line-height: 40px;
-                   transition: all 0.3s ease-in-out;"
-                   href="#!"><i
-                        class="fab fa-linkedin-in"
-                      ></i></a></li>
-                </ul>
-              </div>
-            </div>
-            <h3 class="h5 mb-1 mt-2"><a class="text-decoration-none" href="#!">Raul Maya</a></h3>
-            <p class="mb-0">Web Developer</p>
-          </div>
-        </div>
+        {{#each users as |user|}}
+         {{> super-users}}
+        {{/each}}
       </div>
     </div>
   </main>

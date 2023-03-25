@@ -1,26 +1,31 @@
 const router = require("express").Router();
-const { Food } = require("../models");
+const { Food, User } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
     const dbFood = await Food.findAll();
+    const dbUser = await User.findAll({
+      attributes: { exclude: ["password"] },
+      where: { is_superuser: true },
+    });
+
     const foodList = [];
     let past_value;
     let new_value;
+    let users = dbUser.map((user) => user.get({ plain: true }));
     let foods = dbFood.map((gallery) => gallery.get({ plain: true }));
     for (let i = 0; i < 3; i++) {
       new_value = Math.floor(Math.random() * foods.length);
-      console.log(new_value)
       if (new_value === past_value) {
-        i--
+        i--;
       } else {
-        foodList.push(foods[new_value])
+        foodList.push(foods[new_value]);
         past_value = new_value;
       }
     }
-    console.log(foodList)
     res.render("index", {
       foodList,
+      users,
     });
   } catch (err) {
     console.log(err);
