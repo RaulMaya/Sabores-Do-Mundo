@@ -1,9 +1,10 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const indexRoute = require('./indexRoute.js');
-const countriesRoute = require('./countriesRoute.js');
+const homeRoutes = require("./homeRoutes");
+const countriesRoute = require("./countriesRoute.js");
 
-router.use('/', indexRoute);
-router.use('/countries', countriesRoute);
+router.use("/", homeRoutes);
+router.use("/countries", countriesRoute);
+
 
 module.exports = router;
