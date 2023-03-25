@@ -5,14 +5,14 @@ body {
 }
 
 #signUp .modal-header {
-  background-image: url(../images/website_images/signUp.jpg);
+  background-image: url(/images/website_images/signUp.jpg);
   background-position: center;
   background-size: cover;
   height: 70px;
 }
 
 #logIn .modal-header {
-  background-image: url(../images/website_images/logIn.jpg);
+  background-image: url(/images/website_images/logIn.jpg);
   background-position: center;
   background-size: cover;
   height: 70px;

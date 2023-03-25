@@ -8,7 +8,7 @@
             From Mexico to Denmark, take a look to the most delicious and popular
             dishes across the world.
           </p>
-          <button class="btn btn-outline-warning">Get Started</button>
+          <a href="/countries" class="btn btn-outline-warning">Get Started</a>
         </div>
         <div class="col m-2">
           <img
@@ -21,7 +21,7 @@
     </div>
     <div class="container-fluid border-2 border-bottom border-top border-secondary text-center bg-warning p-5 mt-5">
       <div class="row row-cols-1 row-cols-md-3 g-4">
-        {{#each foods as |food|}}
+        {{#each foodList as |food|}}
           {{> food-cards}}
         {{/each}}
       </div>
