@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Country, Food, Recipe } = require("../models");
+const { Food } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
@@ -17,24 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/country/:id", async (req, res) => {
-  try {
-    const dbCountryData = await Country.findByPk(req.params.id, {
-      include: [
-        {
-          model: Food,
-          attributes: ["name", "description", "food_image"],
-        },
-      ],
-    });
-    const country = dbCountryData.get({ plain: true });
-    console.log(country);
-    res.render("food", { country });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+
 
 router.get("/food/:id", (req, res) => {});
 
