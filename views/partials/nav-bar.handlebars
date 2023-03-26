@@ -1,207 +1,238 @@
-    <header>
-      <nav
-        class="navbar navbar-expand-lg bg-light bg-body-tertiary"
-      >
-        <div class="container-fluid text-dark">
-          <a class="navbar-brand text-dark fw-bold" href="/">
-            {{!-- <img
+<header>
+  <nav class="navbar navbar-expand-lg border-bottom border-2 border-warning bg-light bg-body-tertiary">
+    <div class="container-fluid text-dark">
+      <a class="navbar-brand text-dark fw-bold" href="/">
+        {{! <img
               src="/images/website_images/SaboresDoMondo.png"
               alt="Logo"
               width="25"
               height="25"
               class="d-inline-block align-text-top"
-            /> --}}
-            Sabores Do Mundo
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="/countries"
-                >Countries</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Top 10</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Dashboard</a>
-              </li>
-              <li class="nav-item ps-2">
-                <button
-                  class="btn btn-outline-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#signUp"
-                  type="button"
-                >
-                  Sign Up
-                </button>
-                <div
-                  class="modal fade"
-                  id="signUp"
-                  tabindex="-1"
-                  aria-labelledby="exampleModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1
-                          class="modal-title fs-3 text-white font-weight-bold"
-                          id="exampleModalLabel"
-                        >
-                          Sign Up
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close text-light bg-light"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
+            /> }}
+        Sabores Do Mundo
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              aria-current="page"
+              href="/countries"
+            >Countries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Top 10</a>
+          </li>
+          {{#if loggedIn}}
+            <script src="./js/logout.js" defer></script>
+            <li class="nav-item">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item ps-2">
+              <button
+                id="logoutBtn"
+                class="btn btn-outline-warning"
+                type="button"
+              >
+                Log Out
+              </button>
+            </li>
+          {{else}}
+            <li id="signUpLi" class="nav-item ps-2">
+              <button
+                class="btn btn-outline-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#signUp"
+                type="button"
+              >
+                Sign Up
+              </button>
+              <div
+                class="modal fade"
+                id="signUp"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1
+                        class="modal-title fs-3 text-white font-weight-bold"
+                        id="exampleModalLabel"
+                      >
+                        Sign Up
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close text-light bg-light"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form class="signUpForm">
+                        <div class="row mb-3">
+                          <div class="col">
                             <label
-                              for="username"
+                              for="firstNameSignUp"
                               class="form-label"
-                            >Username</label>
+                            >First Name</label>
                             <input
+                              id="firstNameSignUp"
                               type="text"
                               class="form-control"
-                              id="username"
-                              aria-describedby="usernameHelp"
-                              required
+                              aria-label="First name"
                             />
-                            <div id="usernameHelp" class="form-text">
-                              Your username must only use aplhanumeric values.
-                            </div>
                           </div>
-                          <div class="mb-3">
-                            <label
-                              for="exampleInputEmail1"
-                              class="form-label"
-                            >Email address</label>
+                          <div class="col">
+                            <label for="lastNameSignUp" class="form-label">Last
+                              Name</label>
                             <input
-                              type="email"
+                              id="lastNameSignUp"
+                              type="text"
                               class="form-control"
-                              id="exampleInputEmail1"
-                              aria-describedby="emailHelp"
-                              required
+                              aria-label="Last name"
                             />
-                            <div id="emailHelp" class="form-text">
-                              We'll never share your email with anyone else.
-                            </div>
                           </div>
-                          <div class="mb-3">
-                            <label
-                              for="exampleInputPassword1"
-                              class="form-label"
-                            >Password</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="exampleInputPassword1"
-                              required
-                            />
-
-                            <div id="passwordHelpInline" class="form-text">
-                              Must be 8-20 characters long.
-                            </div>
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="usernameSignUp"
+                            class="form-label"
+                          >Username</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="usernameSignUp"
+                            aria-describedby="usernameHelp"
+                            required
+                          />
+                          <div id="usernameHelp" class="form-text">
+                            Your username must only use aplhanumeric values.
                           </div>
+                        </div>
+                        <div class="mb-3">
+                          <label for="emailSignUp" class="form-label">Email
+                            address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="emailSignUp"
+                            aria-describedby="emailHelp"
+                            required
+                          />
+                          <div id="emailHelp" class="form-text">
+                            We'll never share your email with anyone else.
+                          </div>
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="passwordSignUp"
+                            class="form-label"
+                          >Password</label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="passwordSignUp"
+                            required
+                          />
 
-                          <button type="submit" class="btn btn-warning">
-                            Submit
-                          </button>
-                        </form>
-                      </div>
+                          <div id="passwordHelpInline" class="form-text">
+                            Must be 8-20 characters long.
+                          </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-warning">
+                          Submit
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
-              </li>
-              <li class="nav-item ps-2">
-                <button
-                  class="btn btn-warning"
-                  data-bs-toggle="modal"
-                  data-bs-target="#logIn"
-                  type="button"
-                >
-                  Log In
-                </button>
-                <div
-                  class="modal fade"
-                  id="logIn"
-                  tabindex="-1"
-                  aria-labelledby="logInModalLabel"
-                  aria-hidden="true"
-                >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1
-                          class="modal-title fs-3 text-white font-weight-bold"
-                          id="logInModalLabel"
-                        >
-                          Log In
-                        </h1>
-                        <button
-                          type="button"
-                          class="btn-close text-light bg-light"
-                          data-bs-dismiss="modal"
-                          aria-label="Close"
-                        ></button>
-                      </div>
-                      <div class="modal-body">
-                        <form>
-                          <div class="mb-3">
-                            <label
-                              for="logInInputEmail1"
-                              class="form-label"
-                            >Email address</label>
-                            <input
-                              type="email"
-                              class="form-control"
-                              id="logInInputEmail1"
-                              aria-describedby="logInemailHelp"
-                              required
-                            />
-                          </div>
-                          <div class="mb-3">
-                            <label
-                              for="logInexampleInputPassword1"
-                              class="form-label"
-                              required
-                            >Password</label>
-                            <input
-                              type="password"
-                              class="form-control"
-                              id="logInexampleInputPassword1"
-                            />
-                          </div>
+              </div>
+            </li>
+            <li id="logInLi" class="nav-item ps-2">
+              <button
+                class="btn btn-warning"
+                data-bs-toggle="modal"
+                data-bs-target="#logIn"
+                type="button"
+              >
+                Log In
+              </button>
+              <div
+                class="modal fade"
+                id="logIn"
+                tabindex="-1"
+                aria-labelledby="logInModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1
+                        class="modal-title fs-3 text-white font-weight-bold"
+                        id="logInModalLabel"
+                      >
+                        Log In
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close text-light bg-light"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                          <label for="emailLogIn" class="form-label">Email
+                            address</label>
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="emailLogIn"
+                            aria-describedby="logInemailHelp"
+                            required
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label
+                            for="passwordLogIn"
+                            class="form-label"
+                            required
+                          >Password</label>
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="passwordLogIn"
+                          />
+                        </div>
 
-                          <button type="submit" class="btn btn-warning">
-                            Submit
-                          </button>
-                        </form>
-                      </div>
+                        <button type="submit" class="btn btn-warning">
+                          Submit
+                        </button>
+                      </form>
                     </div>
                   </div>
                 </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+              </div>
+            </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

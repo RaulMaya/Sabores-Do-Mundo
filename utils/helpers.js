@@ -16,7 +16,6 @@ class Youtube_tool {
           reject(error);
         } else {
           const videoId = result.items[0].id.videoId;
-          // const videoLink = "https://www.youtube.com/watch?v=" + videoId;
           resolve(videoId);
         }
       });
@@ -24,4 +23,24 @@ class Youtube_tool {
   }
 }
 
-module.exports = { Youtube_tool };
+const nationalities = (country) => {
+  switch (country) {
+    case "Italy":
+      return "Italian";
+
+    case "Greece":
+      return "Greek";
+    case "Mexico":
+      return "Mexican";
+    case "France":
+      return "French";
+    case "Peru":
+      return "Peruvian";
+    case "Denmark":
+      return "Danish";
+    default:
+      return;
+  }
+};
+
+module.exports = { Youtube_tool, nationalities };

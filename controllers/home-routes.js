@@ -26,6 +26,22 @@ router.get("/", async (req, res) => {
     res.render("index", {
       foodList,
       users,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get("/dashboard", async (req, res) => {
+  try {
+    const dbUser = await User.findAll();
+    console.log(req.session.email)
+    let users = dbUser.map((user) => user.get({ plain: true }));
+    res.render("dashboard", {
+      users,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
@@ -34,7 +50,5 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/food/:id", (req, res) => {});
-
-router.get("/login", (req, res) => {});
 
 module.exports = router;
