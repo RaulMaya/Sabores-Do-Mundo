@@ -30,4 +30,24 @@ async function yt(query) {
   return videoLink;
 }
 
-module.exports = { yt };
+const nationalities = (country) => {
+  switch (country) {
+    case "Italy":
+      return "Italian"
+
+    case "Greece":
+      return "Greek"
+    case "Mexico":
+      return "Mexican"
+    case "France":
+      return "French"
+    case "Peru":
+      return "Peruvian"
+    case "Denmark":
+      return "Danish"
+    default:
+      return
+  }
+};
+
+module.exports = { yt, nationalities };
