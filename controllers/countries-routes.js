@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Country, Food, Recipe } = require("../models");
 const { Youtube_tool } = require("../utils/helpers");
 
-const withAuth = require('../utils/auth');
+const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, async (req, res) => {
   try {
@@ -26,12 +26,28 @@ router.get("/:id", async (req, res) => {
         {
           model: Food,
           attributes: ["id", "name", "description", "food_image"],
+          include: [
+            {
+              model: Recipe,
+              attributes: [
+                "id",
+                "ingredients",
+                "steps",
+                "video_link",
+                "food_id",
+              ],
+            },
+          ],
         },
       ],
     });
     const country = dbCountryData.get({ plain: true });
-    // console.log(country);
-    res.render("food", { country, loggedIn: req.session.loggedIn, });
+    console.log(country)
+    res.render("food", {
+      country,
+      recipes: country["food"],
+      loggedIn: req.session.loggedIn,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
