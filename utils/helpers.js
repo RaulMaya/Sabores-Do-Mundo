@@ -16,39 +16,31 @@ class Youtube_tool {
           reject(error);
         } else {
           const videoId = result.items[0].id.videoId;
-          const videoLink = "https://www.youtube.com/watch?v=" + videoId;
-          resolve(videoLink);
+          resolve(videoId);
         }
       });
     });
   }
 }
 
-// async function yt(query) {
-//   const yt = new Youtube_tool(query);
-//   const videoLink = await yt.Video();
-//   return videoLink;
-// }
-
 const nationalities = (country) => {
   switch (country) {
     case "Italy":
-      return "Italian"
+      return "Italian";
 
     case "Greece":
-      return "Greek"
+      return "Greek";
     case "Mexico":
-      return "Mexican"
+      return "Mexican";
     case "France":
-      return "French"
+      return "French";
     case "Peru":
-      return "Peruvian"
+      return "Peruvian";
     case "Denmark":
-      return "Danish"
+      return "Danish";
     default:
-      return
+      return;
   }
 };
-
 
 module.exports = { Youtube_tool, nationalities };

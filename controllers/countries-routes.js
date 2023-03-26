@@ -26,57 +26,41 @@ router.get("/:id", async (req, res) => {
         {
           model: Food,
           attributes: ["id", "name", "description", "food_image"],
-          include: [
-            {
-              model: Recipe,
-              attributes: [
-                "id",
-                "ingredients",
-                "steps",
-                "video_link",
-                "food_id",
-              ],
-            },
-          ],
         },
       ],
     });
     const country = dbCountryData.get({ plain: true });
-    console.log(country)
-    res.render("food", {
-      country,
-      recipes: country["food"],
-      loggedIn: req.session.loggedIn,
-    });
+    // console.log(country);
+    res.render("food", { country });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
-// router.get("/food/:id", async (req, res) => {
-//   try {
-//     const dbFoodData = await Food.findByPk(req.params.id, {
-//       include: [
-//         {
-//           model: Recipe,
-//           attributes: ["ingredients", "video_link"],
-//         },
-//       ],
-//     });
-//     const food = dbFoodData.get({ plain: true });
+router.get("/food/:id", async (req, res) => {
+  try {
+    const dbFoodData = await Food.findByPk(req.params.id, {
+      include: [
+        {
+          model: Recipe,
+          attributes: ["ingredients", "steps", "video_link"],
+        },
+      ],
+    });
+    const food = dbFoodData.get({ plain: true });
 
-//     const yt = new Youtube_tool(food.recipe.video_link);
-//     const videoLink = await yt.Video();
+    const yt = new Youtube_tool(food.recipe.video_link);
+    const videoLink = await yt.Video();
 
-//     if (videoLink) {
-//       food.recipe.video_link = await videoLink;
-//       res.json(food);
-//     } else {
-//       res.status(500);
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    if (videoLink) {
+      food.recipe.video_link = await videoLink;
+      res.render("recipe", food);
+    } else {
+      res.status(500);
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 module.exports = router;
