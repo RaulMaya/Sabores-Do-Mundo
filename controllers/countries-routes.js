@@ -19,19 +19,26 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", withAuth, async (req, res) => {
   try {
     const dbCountryData = await Country.findByPk(req.params.id, {
       include: [
         {
           model: Food,
           attributes: ["id", "name", "description", "food_image"],
+          include: [
+            {
+              model: Recipe,
+              attributes: ["ingredients", "steps", "video_link"],
+            },
+          ],
         },
       ],
     });
+
     const country = dbCountryData.get({ plain: true });
     // console.log(country);
-    res.render("food", { country });
+    res.render("food", { country, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
