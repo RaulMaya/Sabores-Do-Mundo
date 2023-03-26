@@ -24,11 +24,11 @@ class Youtube_tool {
   }
 }
 
-async function yt(query) {
-  const yt = new Youtube_tool(query);
-  const videoLink = await yt.Video();
-  return videoLink;
-}
+// async function yt(query) {
+//   const yt = new Youtube_tool(query);
+//   const videoLink = await yt.Video();
+//   return videoLink;
+// }
 
 const nationalities = (country) => {
   switch (country) {
@@ -50,4 +50,5 @@ const nationalities = (country) => {
   }
 };
 
-module.exports = { yt, nationalities };
+
+module.exports = { Youtube_tool, nationalities };
