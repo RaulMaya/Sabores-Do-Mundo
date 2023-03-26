@@ -16,18 +16,12 @@ class Youtube_tool {
           reject(error);
         } else {
           const videoId = result.items[0].id.videoId;
-          const videoLink = "https://www.youtube.com/watch?v=" + videoId;
-          resolve(videoLink);
+          // const videoLink = "https://www.youtube.com/watch?v=" + videoId;
+          resolve(videoId);
         }
       });
     });
   }
 }
-
-// async function yt(query) {
-//   const yt = new Youtube_tool(query);
-//   const videoLink = await yt.Video();
-//   return videoLink;
-// }
 
 module.exports = { Youtube_tool };
