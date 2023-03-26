@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Country, Food, Recipe } = require("../models");
+const { Youtube_tool } = require("../utils/helpers");
 
 router.get("/", async (req, res) => {
   try {
@@ -21,16 +22,42 @@ router.get("/:id", async (req, res) => {
       include: [
         {
           model: Food,
-          attributes: ["name", "description", "food_image"],
+          attributes: ["id", "name", "description", "food_image"],
         },
       ],
     });
     const country = dbCountryData.get({ plain: true });
-    console.log(country);
+    // console.log(country);
     res.render("food", { country });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+// router.get("/food/:id", async (req, res) => {
+//   try {
+//     const dbFoodData = await Food.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: Recipe,
+//           attributes: ["ingredients", "video_link"],
+//         },
+//       ],
+//     });
+//     const food = dbFoodData.get({ plain: true });
+
+//     const yt = new Youtube_tool(food.recipe.video_link);
+//     const videoLink = await yt.Video();
+
+//     if (videoLink) {
+//       food.recipe.video_link = await videoLink;
+//       res.json(food);
+//     } else {
+//       res.status(500);
+//     }
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 module.exports = router;
