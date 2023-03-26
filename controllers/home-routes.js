@@ -1,9 +1,16 @@
 const router = require("express").Router();
-const { Food, User } = require("../models");
+const { Food, User, Recipe } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    const dbFood = await Food.findAll();
+    const dbFood = await Food.findAll({
+      include: [
+        {
+          model: Recipe,
+          attributes: ["ingredients", "steps", "video_link"],
+        },
+      ],
+    });
     const dbUser = await User.findAll({
       attributes: { exclude: ["password"] },
       where: { is_superuser: true },
