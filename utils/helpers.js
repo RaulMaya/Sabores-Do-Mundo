@@ -24,10 +24,10 @@ class Youtube_tool {
   }
 }
 
-async function yt(query) {
-  const yt = new Youtube_tool(query);
-  const videoLink = await yt.Video();
-  return videoLink;
-}
+// async function yt(query) {
+//   const yt = new Youtube_tool(query);
+//   const videoLink = await yt.Video();
+//   return videoLink;
+// }
 
-module.exports = { yt };
+module.exports = { Youtube_tool };
