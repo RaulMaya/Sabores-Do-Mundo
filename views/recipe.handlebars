@@ -1,0 +1,44 @@
+<body>
+  {{> nav-bar}}
+  <main>
+    <div class="container text-center mt-1">
+      <div class="row row align-items-center">
+        <div class="col m-2">
+          <p class="fs-1 text-warning bg-dark">
+            {{name}}
+          </p>
+        </div>
+        <div class="col m-2">
+          <img
+            src="/images/food_guide_db/food/{{food_image}}"
+            class="img-fluid h-75"
+            alt="Sabores Do Mundo index image"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container text-center bg-warning p-5 mt-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Ingredients</h5>
+                    <p class="card-text">
+                        {{recipe.ingredients}}
+                    </p>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Steps</h5>
+                    <p class="card-text">
+                        {{recipe.steps}}
+                    </p>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title">Video Tutorial</h5>
+                        <iframe id="player" type="text/html" width="640" height="390"
+                        src="http://www.youtube.com/embed/{{recipe.video_link}}"
+                        frameborder="0"></iframe>
+                </div>
+            </div>
+    </div>
+  </main>
+</body>
