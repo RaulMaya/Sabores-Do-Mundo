@@ -45,7 +45,6 @@ router.get("/:id", async (req, res) => {
     console.log(country)
     res.render("food", {
       country,
-      recipes: country["food"],
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
