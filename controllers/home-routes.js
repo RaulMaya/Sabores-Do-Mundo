@@ -26,6 +26,7 @@ router.get("/", async (req, res) => {
     res.render("index", {
       foodList,
       users,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     console.log(err);
