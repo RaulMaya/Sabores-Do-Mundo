@@ -26,18 +26,15 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a
-              class="nav-link"
+              class="nav-link text-dark"
               aria-current="page"
               href="/countries"
             >Countries</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Top 10</a>
-          </li>
           {{#if loggedIn}}
             <script src="./js/logout.js" defer></script>
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
+              <a class="nav-link text-dark" href="/dashboard">Dashboard</a>
             </li>
             <li class="nav-item ps-2">
               <button

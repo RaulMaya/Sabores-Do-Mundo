@@ -24,8 +24,6 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
-
 // Login
 router.post("/login", async (req, res) => {
   try {
@@ -75,3 +73,23 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+// Add dish to user
+// Define the route handler for the POST request
+router.post("/food/:id", async (req, res) => {
+  try {
+    const dbUserData = await User.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+
+    console.log(dbUserData)
+  } catch (error) {
+    // Handle any errors
+    console.error(error);
+    res.status(500).send("Internal server error");
+  }
+});
+
+module.exports = router;

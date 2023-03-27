@@ -43,8 +43,9 @@ router.get("/", async (req, res) => {
 
 router.get("/dashboard", async (req, res) => {
   try {
-    const dbUser = await User.findOne({ where: { email: req.body.email } });
-    let user = dbUser.map((user) => user.get({ plain: true }));
+    const dbUser = await User.findOne({ where: { email: req.session.email } });
+    const user = dbUser.get({ plain: true });
+    console.log(user)
     res.render("dashboard", {
       user,
       loggedIn: req.session.loggedIn,
