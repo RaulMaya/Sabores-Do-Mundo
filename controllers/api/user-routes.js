@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.loggedIn = true;
       req.session.email = req.body.email;
+      req.session.id = dbUserData.id;
 
       res.status(200).json(dbUserData);
     });
@@ -88,6 +89,7 @@ router.post("/food", async (req, res) => {
     });
     const foodData = dbFoodData.get({ plain: true });
     const userData = dbUserData.get({ plain: true });
+    
     dbFoodData.user_id = userData.id;
     await dbFoodData.save();
 
@@ -107,8 +109,8 @@ router.delete("/food", async (req, res) => {
   try {
     const { id } = req.body;
     const dbFoodData = await Food.findByPk(id);
-    console.log(dbFoodData)
-    dbFoodData.user_id = null
+    console.log(dbFoodData);
+    dbFoodData.user_id = null;
     await dbFoodData.save();
     res.status(200).send("Object assigned to user");
   } catch (error) {
@@ -117,6 +119,5 @@ router.delete("/food", async (req, res) => {
     res.status(500).send("Internal server error");
   }
 });
-
 
 module.exports = router;

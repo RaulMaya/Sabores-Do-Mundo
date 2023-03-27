@@ -43,4 +43,18 @@ const nationalities = (country) => {
   }
 };
 
-module.exports = { Youtube_tool, nationalities };
+const fourOFourHandler = (err, req, res, next) => {
+  console.error(err.stack);
+  res.status(404).render("404");
+};
+
+const compare = (a, b, options) => {
+  console.log(a, b)
+  if (a == b) {
+    return options.fn(this);
+  } else {
+    return options.inverse(this);
+  }
+};
+
+module.exports = { Youtube_tool, nationalities, fourOFourHandler, compare };

@@ -1,17 +1,11 @@
 <header>
   <nav
-    class="navbar navbar-expand-lg border-bottom border-2 border-warning bg-light bg-body-tertiary"
+    class="navbar navbar-expand-lg border-bottom border-2 border-primary bg-warning bg-body-tertiary"
   >
     <div class="container-fluid text-dark">
       <a class="navbar-brand text-dark fw-bold" href="/">
-        {{! <img
-              src="/images/website_images/SaboresDoMondo.png"
-              alt="Logo"
-              width="25"
-              height="25"
-              class="d-inline-block align-text-top"
-            /> }}
         Sabores Do Mundo
+        <i class="fa-solid fa-utensils"></i>
       </a>
       <button
         class="navbar-toggler"
@@ -41,7 +35,7 @@
             <li class="nav-item ps-2">
               <button
                 id="logoutBtn"
-                class="btn btn-outline-warning"
+                class="btn btn-outline-primary"
                 type="button"
               >
                 Log Out
@@ -52,7 +46,7 @@
             <script src="./js/login.js" defer></script>
             <li id="signUpLi" class="nav-item ps-2">
               <button
-                class="btn btn-outline-warning"
+                class="btn btn-outline-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#signUp"
                 type="button"
@@ -155,9 +149,16 @@
                           </div>
                         </div>
 
-                        <button type="submit" class="btn btn-warning">
+                        <button type="submit" class="btn btn-primary">
                           Submit
                         </button>
+                        <p class="text-dark fs-6 mt-4">Already subscribed?
+                          <a
+                            href="/"
+                            data-bs-toggle="modal"
+                            data-bs-target="#logIn"
+                            type="button"
+                          >Log In</a></p>
                       </form>
                     </div>
                   </div>
@@ -166,7 +167,7 @@
             </li>
             <li id="logInLi" class="nav-item ps-2">
               <button
-                class="btn btn-warning"
+                class="btn btn-primary"
                 data-bs-toggle="modal"
                 data-bs-target="#logIn"
                 type="button"
@@ -221,10 +222,17 @@
                             id="passwordLogIn"
                           />
                         </div>
-
-                        <button type="submit" class="btn btn-warning">
+                        <button type="submit" class="btn btn-primary">
                           Submit
                         </button>
+                        <p class="text-dark fs-6 mt-4">You do not have an
+                          account?
+                          <a
+                            href="/"
+                            data-bs-toggle="modal"
+                            data-bs-target="#signUp"
+                            type="button"
+                          >Create one</a></p>
                       </form>
                     </div>
                   </div>

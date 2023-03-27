@@ -1,14 +1,14 @@
-<body>
+<body class="bg-light">
   {{> nav-bar}}
   <main>
-    <div class="container text-center mt-4">
+    <div class="container bg-warning shadow rounded-4 text-center mt-4 mb-4">
       <div class="row row align-items-center">
         <div class="col m-2">
           <p class="fs-1 lh-lg fw-bold">
-            From Mexico to Denmark, take a look to the most delicious and popular
+            From <span style="color:green">Mexico</span> to <span style="color:#CD0404">Denmark</span>, take a look to the most delicious and popular
             dishes across the world.
           </p>
-          <a href="/countries" class="btn btn-outline-warning">Get Started</a>
+          <a href="/countries" class="btn btn-outline-primary">Get Started</a>
         </div>
         <div class="col m-2">
           <img
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="container rounded-4 shadow border-2 text-center bg-warning p-5 mt-3">
+    <div class="container rounded-4 shadow border-2 text-center bg-primary p-5 mt-3">
       <div class="row row-cols-1 row-cols-md-3 g-4">
         {{#if loggedIn}}
           {{#each foodList as |food|}}

@@ -33,7 +33,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
+// app.use(noRouteHandler);
 app.use(routes);
+
 
 // Starts the server to begin listening
 sequelize.sync({ force: false }).then(() => {

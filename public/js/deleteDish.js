@@ -13,7 +13,9 @@ for (let i = 0; i < noLoveBtn.length; i++) {
   noLoveBtn[i].addEventListener("click", function () {
     console.log(this.id);
     this.classList.remove("btn-danger");
+    this.classList.remove("noLoveIt");
     this.classList.add("btn-outline-danger");
+    this.classList.add("loveIt");
     const dishToDelete = {
       id: this.id,
     };
