@@ -101,4 +101,22 @@ router.post("/food", async (req, res) => {
   }
 });
 
+// Delete dish to user
+// Define the route handler for the POST request
+router.delete("/food", async (req, res) => {
+  try {
+    const { id } = req.body;
+    const dbFoodData = await Food.findByPk(id);
+    console.log(dbFoodData)
+    dbFoodData.user_id = null
+    await dbFoodData.save();
+    res.status(200).send("Object assigned to user");
+  } catch (error) {
+    // Handle any errors
+    console.error(error);
+    res.status(500).send("Internal server error");
+  }
+});
+
+
 module.exports = router;

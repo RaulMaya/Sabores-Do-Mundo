@@ -6,6 +6,7 @@
     "username": "RaulMaya20",
     "linkedin": "https://www.linkedin.com/in/raul-maya/",
     "github": "https://github.com/RaulMaya",
+    "user_image": "raul.jpg",
     "email": "raulmayas20@hotmail.com",
     "password": "password1234"
   },
@@ -16,16 +17,18 @@
     "username": "RaulOlivo60",
     "linkedin": "https://www.linkedin.com/in/raul-maya/",
     "github": "https://github.com/rulalolivo",
+    "user_image": "raulolivo.png",
     "email": "r.olivo606@gmail.com",
     "password": "password1234"
   },
   {
     "is_superuser": true,
-    "firstname": "Jacqueline",
+    "firstname": "Jeacqueline",
     "lastname": "Rios",
-    "username": "JacquelineRios",
+    "username": "JeacquelineRios",
     "linkedin": "https://www.linkedin.com/in/raul-maya/",
     "github": "https://github.com/Jeacqueline",
+    "user_image": "jeaqueline.jpg",
     "email": "jeacqueline.rios@outlook.com",
     "password": "password1234"
   },
@@ -36,6 +39,7 @@
     "username": "MoisesPerez",
     "linkedin": "https://www.linkedin.com/in/raul-maya/",
     "github": "https://github.com/MoisesPerez90",
+    "user_image": "moises.png",
     "email": "moises.perezr@hotmail.com",
     "password": "password1234"
   },
@@ -46,6 +50,7 @@
     "username": "BryanAguirre",
     "linkedin": "https://www.linkedin.com/in/raul-maya/",
     "github": "https://github.com/Brayan-AS",
+    "user_image": "bryan.png",
     "email": "bryanaguirre@gmail.com",
     "password": "password1234"
   }

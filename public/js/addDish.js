@@ -1,5 +1,5 @@
 const saveDish = (id) =>
-  fetch("api/users/food", {
+  fetch("/api/users/food", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -12,6 +12,8 @@ const loveBtn = document.getElementsByClassName("loveIt");
 for (let i = 0; i < loveBtn.length; i++) {
   loveBtn[i].addEventListener("click", function () {
     console.log(this.id);
+    this.classList.remove("btn-outline-danger");
+    this.classList.add("btn-danger");
     const dishAddition = {
       id: this.id,
     };

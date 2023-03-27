@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { Food, User, Recipe } = require("../models");
+const withAuth = require("../utils/auth");
+const { Youtube_tool } = require("../utils/helpers");
 
 router.get("/", async (req, res) => {
   try {
@@ -20,7 +22,7 @@ router.get("/", async (req, res) => {
     let past_value;
     let new_value;
     let users = dbUser.map((user) => user.get({ plain: true }));
-    let foods = dbFood.map((gallery) => gallery.get({ plain: true }));
+    let foods = dbFood.map((f) => f.get({ plain: true }));
     for (let i = 0; i < 3; i++) {
       new_value = Math.floor(Math.random() * foods.length);
       if (new_value === past_value) {
@@ -30,6 +32,15 @@ router.get("/", async (req, res) => {
         past_value = new_value;
       }
     }
+
+    // for (element in foodList) {
+    //   const yt = new Youtube_tool(foodList[element].recipe.video_link);
+    //   const videoLink = await yt.Video();
+    //   if (videoLink) {
+    //     foodList[element].recipe.video_link = await videoLink;
+    //   }
+    // }
+
     res.render("index", {
       foodList,
       users,
@@ -41,18 +52,33 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/dashboard", async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const dbUser = await User.findOne({ where: { email: req.session.email } });
     const user = dbUser.get({ plain: true });
-    const dbFood = await Food.findAll({ where: { user_id: user.id} });
+    const dbFood = await Food.findAll({
+      where: { user_id: user.id },
+      include: [
+        {
+          model: Recipe,
+          attributes: ["ingredients", "steps", "video_link"],
+        },
+      ],
+    });
     let myFoods = dbFood.map((food) => food.get({ plain: true }));
     console.log(myFoods)
-    console.log(user)
+    // for (element in myFoods) {
+    //   const yt = new Youtube_tool(myFoods[element].recipe.video_link);
+    //   const videoLink = await yt.Video();
+    //   if (videoLink) {
+    //     myFoods[element].recipe.video_link = await videoLink;
+    //   }
+    // }
+
     res.render("dashboard", {
       user,
       myFoods,
-      'foodLength': myFoods.length,
+      foodLength: myFoods.length,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -60,7 +86,5 @@ router.get("/dashboard", async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// router.get("/food/:id", (req, res) => {});
 
 module.exports = router;

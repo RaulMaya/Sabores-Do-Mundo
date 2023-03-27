@@ -40,6 +40,10 @@ User.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
+    user_image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

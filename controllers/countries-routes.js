@@ -25,7 +25,7 @@ router.get("/:id", withAuth, async (req, res) => {
       include: [
         {
           model: Food,
-          attributes: ["id", "name", "description", "food_image"],
+          attributes: ["id", "name", "description", "food_image", "user_id"],
           include: [
             {
               model: Recipe,
@@ -37,13 +37,15 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     const country = dbCountryData.get({ plain: true });
-    for (element in country.food) {
-      const yt = new Youtube_tool(country.food[element].recipe.video_link);
-      const videoLink = await yt.Video();
-      if (videoLink) {
-        country.food[element].recipe.video_link = await videoLink;
-      }
-    }
+    console.log(country)
+    // for (element in country.food) {
+    //   console.log(country.food[element].recipe.video_link)
+    //   const yt = new Youtube_tool(country.food[element].recipe.video_link);
+    //   const videoLink = await yt.Video();
+    //   if (videoLink) {
+    //     country.food[element].recipe.video_link = await videoLink;
+    //   }
+    // }
 
     res.render("food", { country, loggedIn: req.session.loggedIn });
   } catch (err) {
@@ -52,42 +54,5 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-// // router.get("/food/:id", async (req, res) => {
-// //   try {
-// //     const dbFoodData = await Food.findByPk(req.params.id, {
-// //       include: [
-// //         {
-// //           model: Recipe,
-// //           attributes: ["ingredients", "steps", "video_link"],
-// //         },
-// //       ],
-// //     });
-// //     const food = dbFoodData.get({ plain: true });
-
-// //     const yt = new Youtube_tool(food.recipe.video_link);
-// //     const videoLink = await yt.Video();
-
-//     if (videoLink) {
-//       food.recipe.video_link = await videoLink;
-//       res.render("recipe", food);
-//     } else {
-//       res.status(500);
-//     }
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-
-// //     if (videoLink) {
-// //       food.recipe.video_link = await videoLink;
-// //       res.render("recipe", food);
-// //     } else {
-// //       res.status(500);
-// //     }
-// //   } catch (err) {
-// //     res.status(500).json(err);
-// //   }
-// // });
 
 module.exports = router;
