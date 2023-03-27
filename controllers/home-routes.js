@@ -45,9 +45,14 @@ router.get("/dashboard", async (req, res) => {
   try {
     const dbUser = await User.findOne({ where: { email: req.session.email } });
     const user = dbUser.get({ plain: true });
+    const dbFood = await Food.findAll({ where: { user_id: user.id} });
+    let myFoods = dbFood.map((food) => food.get({ plain: true }));
+    console.log(myFoods)
     console.log(user)
     res.render("dashboard", {
       user,
+      myFoods,
+      'foodLength': myFoods.length,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {

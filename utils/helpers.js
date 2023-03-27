@@ -3,7 +3,7 @@ const youtube = new Youtube();
 
 class Youtube_tool {
   constructor(query) {
-    this.key = "AIzaSyD7f5jpMFMEwzc0YtBojAMT6Eq-t7v51hc";
+    this.key = "AIzaSyB8JSiLwZIwSAxuKkL-sQ2bTSUkef4QLFo";
     this.query = query;
   }
 

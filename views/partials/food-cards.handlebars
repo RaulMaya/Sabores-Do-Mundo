@@ -11,10 +11,10 @@
         {{description}}
       </p>
     </div>
-    <div class="card-footer p-3">
+    <div class="card-footer p-3 text-center align-items-center">
       <button
         type="button"
-        class="btn btn-outline-warning me-3 btn-sm"
+        class="btn btn-outline-warning me-3 btn-sm text-dark m-2"
         data-bs-toggle="modal"
         data-bs-target="#exampleModal{{id}}"
       >
@@ -22,7 +22,7 @@
         {{name}}
         recipe
       </button>
-      <a href="" class="btn btn-outline-danger btn-sm"><i
+      <a id="{{id}}" class="btn btn-outline-danger btn-sm loveIt m-2"><i
           class="far fa-heart"
         ></i></a>
 
@@ -61,18 +61,19 @@
                   {{recipe.steps}}
                 </p>
               </div>
-
-              <div class="card-body">
-                <h5 class="card-title">Video Tutorial</h5>
-                <iframe
-                  id="player"
-                  type="text/html"
-                  width="640"
-                  height="390"
-                  src="http://www.youtube.com/embed/{{recipe.video_link}}"
-                  frameborder="0"
-                ></iframe>
-              </div>
+              {{#if recipe.video_link}}
+                <div class="card-body">
+                  <h5 class="card-title">Video Tutorial</h5>
+                  <iframe
+                    id="player"
+                    type="text/html"
+                    width="640"
+                    height="390"
+                    src="http://www.youtube.com/embed/{{recipe.video_link}}"
+                    frameborder="0"
+                  ></iframe>
+                </div>
+              {{/if}}
             </div>
             <div class="modal-footer">
               <button

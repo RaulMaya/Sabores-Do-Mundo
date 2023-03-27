@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User } = require("../../models");
+const { User, Food } = require("../../models");
 
 // CREATE new user
 router.post("/", async (req, res) => {
@@ -76,15 +76,24 @@ router.post("/logout", (req, res) => {
 
 // Add dish to user
 // Define the route handler for the POST request
-router.post("/food/:id", async (req, res) => {
+router.post("/food", async (req, res) => {
   try {
+    const { id } = req.body;
+    const dbFoodData = await Food.findByPk(id);
     const dbUserData = await User.findOne({
+      attributes: { exclude: ["password"] },
       where: {
-        email: req.body.email,
+        email: req.session.email,
       },
     });
+    const foodData = dbFoodData.get({ plain: true });
+    const userData = dbUserData.get({ plain: true });
+    dbFoodData.user_id = userData.id;
+    await dbFoodData.save();
 
-    console.log(dbUserData)
+    res.status(200).send("Object assigned to user");
+    console.log(foodData);
+    console.log(userData);
   } catch (error) {
     // Handle any errors
     console.error(error);

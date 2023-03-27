@@ -1,5 +1,7 @@
 <header>
-  <nav class="navbar navbar-expand-lg border-bottom border-2 border-warning bg-light bg-body-tertiary">
+  <nav
+    class="navbar navbar-expand-lg border-bottom border-2 border-warning bg-light bg-body-tertiary"
+  >
     <div class="container-fluid text-dark">
       <a class="navbar-brand text-dark fw-bold" href="/">
         {{! <img
@@ -32,7 +34,7 @@
             >Countries</a>
           </li>
           {{#if loggedIn}}
-            <script src="./js/logout.js" defer></script>
+            <script src="/js/logout.js" defer></script>
             <li class="nav-item">
               <a class="nav-link text-dark" href="/dashboard">Dashboard</a>
             </li>
@@ -46,6 +48,8 @@
               </button>
             </li>
           {{else}}
+            <script src="./js/signUp.js" defer></script>
+            <script src="./js/login.js" defer></script>
             <li id="signUpLi" class="nav-item ps-2">
               <button
                 class="btn btn-outline-warning"
