@@ -37,7 +37,6 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     const country = dbCountryData.get({ plain: true });
-
     for (element in country.food) {
       const yt = new Youtube_tool(country.food[element].recipe.video_link);
       const videoLink = await yt.Video();

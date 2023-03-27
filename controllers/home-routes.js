@@ -1,9 +1,16 @@
 const router = require("express").Router();
-const { Food, User } = require("../models");
+const { Food, User, Recipe } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
-    const dbFood = await Food.findAll();
+    const dbFood = await Food.findAll({
+      include: [
+        {
+          model: Recipe,
+          attributes: ["ingredients", "steps", "video_link"],
+        },
+      ],
+    });
     const dbUser = await User.findAll({
       attributes: { exclude: ["password"] },
       where: { is_superuser: true },
@@ -36,11 +43,10 @@ router.get("/", async (req, res) => {
 
 router.get("/dashboard", async (req, res) => {
   try {
-    const dbUser = await User.findAll();
-    console.log(req.session.email)
-    let users = dbUser.map((user) => user.get({ plain: true }));
+    const dbUser = await User.findOne({ where: { email: req.body.email } });
+    let user = dbUser.map((user) => user.get({ plain: true }));
     res.render("dashboard", {
-      users,
+      user,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -49,6 +55,6 @@ router.get("/dashboard", async (req, res) => {
   }
 });
 
-router.get("/food/:id", (req, res) => {});
+// router.get("/food/:id", (req, res) => {});
 
 module.exports = router;
