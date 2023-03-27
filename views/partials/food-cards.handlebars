@@ -55,12 +55,14 @@
                       </p>
                   </div>
 
+                  {{#if recipe.video_link}}
                   <div class="card-body">
                       <h5 class="card-title">Video Tutorial</h5>
                           <iframe id="player" type="text/html" width="640" height="390"
                           src="http://www.youtube.com/embed/{{recipe.video_link}}"
                           frameborder="0"></iframe>
                   </div>
+                  {{/if}}
             </div>
             <div class="modal-footer">
               <button
