@@ -39,15 +39,14 @@ router.get("/:id", withAuth, async (req, res) => {
     });
 
     const country = dbCountryData.get({ plain: true });
-
-    // for (element in country.food) {
-    //   console.log(country.food[element].recipe.video_link)
-    //   const yt = new Youtube_tool(country.food[element].recipe.video_link);
-    //   const videoLink = await yt.Video();
-    //   if (videoLink) {
-    //     country.food[element].recipe.video_link = await videoLink;
-    //   }
-    // }
+    for (element in country.food) {
+      console.log(country.food[element].recipe.video_link)
+      const yt = new Youtube_tool(country.food[element].recipe.video_link);
+      const videoLink = await yt.Video();
+      if (videoLink) {
+        country.food[element].recipe.video_link = await videoLink;
+      }
+    }
 
     res.render("food", { country, loggedIn: req.session.loggedIn, userid: req.session.id });
   } catch (err) {
