@@ -28,7 +28,9 @@ router.get("/", async (req, res) => {
     let foods = dbFood.map((f) => f.get({ plain: true }));
     console.log(foods)
     for (let i = 0; i < 3; i++) {
+      console.log(i)
       new_value = Math.floor(Math.random() * foods.length);
+      console.log(new_value)
       if (new_value === past_value) {
         i--;
       } else {
