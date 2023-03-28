@@ -14,12 +14,12 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    console.log("Pass Food Find All")
+    console.log(dbFood)
     const dbUser = await User.findAll({
       attributes: { exclude: ["password"] },
       where: { is_superuser: true },
     });
-    console.log("Pass User Find All")
+    console.log(dbUser)
     const foodList = [];
     let past_value;
     let new_value;
