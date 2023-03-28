@@ -104,7 +104,6 @@ router.post("/food", async (req, res) => {
 });
 
 // Delete dish to user
-// Define the route handler for the POST request
 router.delete("/food", async (req, res) => {
   try {
     const { id } = req.body;
