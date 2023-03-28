@@ -33,13 +33,13 @@ router.get("/", async (req, res) => {
       }
     }
 
-    for (element in foodList) {
-      const yt = new Youtube_tool(foodList[element].recipe.video_link);
-      const videoLink = await yt.Video();
-      if (videoLink) {
-        foodList[element].recipe.video_link = await videoLink;
-      }
-    }
+    // for (element in foodList) {
+    //   const yt = new Youtube_tool(foodList[element].recipe.video_link);
+    //   const videoLink = await yt.Video();
+    //   if (videoLink) {
+    //     foodList[element].recipe.video_link = await videoLink;
+    //   }
+    // }
 
     res.render("index", {
       foodList,
@@ -67,14 +67,14 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ],
     });
     let myFoods = dbFood.map((food) => food.get({ plain: true }));
-    console.log(myFoods);
-    for (element in myFoods) {
-      const yt = new Youtube_tool(myFoods[element].recipe.video_link);
-      const videoLink = await yt.Video();
-      if (videoLink) {
-        myFoods[element].recipe.video_link = await videoLink;
-      }
-    }
+
+    // for (element in myFoods) {
+    //   const yt = new Youtube_tool(myFoods[element].recipe.video_link);
+    //   const videoLink = await yt.Video();
+    //   if (videoLink) {
+    //     myFoods[element].recipe.video_link = await videoLink;
+    //   }
+    // }
 
     res.render("dashboard", {
       user,
