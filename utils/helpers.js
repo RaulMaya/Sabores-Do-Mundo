@@ -3,7 +3,7 @@ const youtube = new Youtube();
 require('dotenv').config();
 class Youtube_tool {
   constructor(query) {
-    this.key = process.env.YOUTUBE_KEY;
+    this.key = process.env.YTK;
     this.query = query;
   }
 
