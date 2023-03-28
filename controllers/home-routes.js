@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    console.log(dbFood);
     const dbUser = await User.findAll({
       attributes: { exclude: ["password"] },
       where: { is_superuser: true },
