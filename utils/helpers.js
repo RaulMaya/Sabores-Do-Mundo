@@ -1,9 +1,9 @@
 const Youtube = require("youtube-node");
 const youtube = new Youtube();
-
+require('dotenv').config();
 class Youtube_tool {
   constructor(query) {
-    this.key = "AIzaSyB8JSiLwZIwSAxuKkL-sQ2bTSUkef4QLFo";
+    this.key = process.env.YOUTUBE_KEY;
     this.query = query;
   }
 
