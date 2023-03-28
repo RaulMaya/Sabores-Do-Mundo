@@ -26,7 +26,6 @@ router.get("/", async (req, res) => {
     let users = dbUser.map((user) => user.get({ plain: true }));
     console.log(users)
     let foods = dbFood.map((f) => f.get({ plain: true }));
-    console.log(foods)
     for (let i = 0; i < 3; i++) {
       console.log(i)
       new_value = Math.floor(Math.random() * foods.length);
