@@ -5,6 +5,7 @@ const { Youtube_tool } = require("../utils/helpers");
 
 router.get("/", async (req, res) => {
   try {
+    console.log("Index")
     const dbFood = await Food.findAll({
       include: [
         {
@@ -13,11 +14,12 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    console.log("Pass Food Find All")
     const dbUser = await User.findAll({
       attributes: { exclude: ["password"] },
       where: { is_superuser: true },
     });
-
+    console.log("Pass User Find All")
     const foodList = [];
     let past_value;
     let new_value;
