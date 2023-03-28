@@ -42,7 +42,7 @@ router.get("/", async (req, res) => {
     //     foodList[element].recipe.video_link = await videoLink;
     //   }
     // }
-
+    console.log(foodList)
     res.render("index", {
       foodList,
       users,
