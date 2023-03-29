@@ -8,4 +8,9 @@ router.use("/", homeRoutes);
 router.use("/countries", countriesRoute);
 router.use("/api", apiRoutes);
 
+router.get("*", function (req, res) {
+    res.render("404", { title: "Page Not Found" });
+  });
+  
+
 module.exports = router;
